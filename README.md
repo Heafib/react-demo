@@ -4,14 +4,20 @@
 1. 新版本react被拆分为react和react-dom,安装时只需多加几个字母	`npm install -g react react-dom`	
 
 2. JSXTransformer.js和React-tools新版本不再可用！
+
 3. 老版本写JSX的时候在script的标签里text的值为JSX	`<script type="text/jsx">...<／script>`  
    新版本script里type值改为babel	
    `<script type="text/babel">...<／script>` 
+
 4. 渲染方法由`React.render()`改为`ReactDOM.render()`
+
 5. 新版本`this.***['']`直接获取dom对象,不再使用	`this.***[''].getDOMNode`,
 	`React.findDOMNode.	(this.***)`不可用！！
+
 6. `React.unmountComponentAtNode()`不再可建议使用,使用	`ReactDOM.unmountComponentAtNode()`代替
+
 7. `this.getDOMNode()`不再可用,使用`ReactDOM.findDOMNode(this)`代替获取真实DOM
+
 8. minxin未来版本将会移除，不再推荐使用。
 
 -
