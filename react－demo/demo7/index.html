@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<!-- http://facebook.github.io/react/docs/events.html#supported-events -->
+<head>
+    <meta charset="UTF-8">
+    <title>demo7</title>
+    <script type="text/javascript" src="./../build/react.js"></script>
+    <script type="text/javascript" src="./../build/react-dom.js"></script>
+    <script type="text/javascript" src="./../build/browser.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+       var MyComponent = React.createClass({
+            handleClick: function() {
+            this.refs.myTextInput.focus();
+            },
+            render: function() {
+                return (
+                    <div>
+                        <input type="text" ref="myTextInput" />
+                        <input type="button" value="Focus the text input" onClick={this.handleClick} />
+                    </div>
+                );
+            }
+        });
+
+        ReactDOM.render(
+            <MyComponent />,
+            document.getElementById('app')
+            );
+    </script>
+</body>
+
+</html>

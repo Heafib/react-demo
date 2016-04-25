@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<!-- 有点懵，等我查查文档。。。https://facebook.github.io/react/docs/top-level-api.html#react.children -->
+<head>
+    <meta charset="UTF-8">
+    <title>demo5</title>
+    <script type="text/javascript" src="./../build/react.js"></script>
+    <script type="text/javascript" src="./../build/react-dom.js"></script>
+    <script type="text/javascript" src="./../build/browser.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        var NotesList = React.createClass({
+            render: function() {
+                return (
+                   <ol>
+                   {
+                    React.Children.map(this.props.children, function (child){
+                        return <li>{child}</li>
+                    })
+                   }
+                   </ol>
+                );
+            }
+        });
+
+        ReactDOM.render(
+            <NotesList>
+                <span>hello</span>
+                <span>world</span>
+            </NotesList>,
+            document.getElementById('app')
+            );
+    </script>
+</body>
+
+</html>
